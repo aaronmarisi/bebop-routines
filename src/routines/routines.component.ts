@@ -2,6 +2,6 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-routines',
-  template: '<h1>Routines Component</h1>'
+  templateUrl: './routines.component.html'
 })
 export class RoutinesComponent {}

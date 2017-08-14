@@ -10,7 +10,8 @@ import { RoutinesComponent } from './routines.component';
   imports: [
     BrowserModule
   ],
-  providers: [],
-  bootstrap: [RoutinesComponent]
+  exports: [
+    RoutinesComponent
+  ]
 })
 export class RoutinesModule { }
