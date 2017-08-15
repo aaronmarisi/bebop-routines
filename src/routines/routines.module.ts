@@ -1,5 +1,5 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { MdToolbarModule } from '@angular/material';
 
 import { RoutinesComponent } from './routines.component';
 
@@ -8,7 +8,7 @@ import { RoutinesComponent } from './routines.component';
     RoutinesComponent
   ],
   imports: [
-    BrowserModule
+    MdToolbarModule
   ],
   exports: [
     RoutinesComponent
