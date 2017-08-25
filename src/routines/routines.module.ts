@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MdToolbarModule, MdListModule } from '@angular/material';
+import { MdToolbarModule, MdListModule, MdButtonModule, MdIconModule } from '@angular/material';
 
 import { RoutinesComponent } from './routines.component';
 
@@ -11,7 +11,9 @@ import { RoutinesComponent } from './routines.component';
   imports: [
     CommonModule,
     MdToolbarModule,
-    MdListModule
+    MdListModule,
+    MdIconModule,
+    MdButtonModule
   ],
   exports: [
     RoutinesComponent
