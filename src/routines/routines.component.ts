@@ -5,7 +5,7 @@ import { Routine, RoutinesViewModel, RoutineViewModel } from './models';
 @Component({
   selector: 'app-routines',
   templateUrl: './routines.component.html',
-  styleUrls: ['./routines.component.scss']
+  styleUrls: ['./routines.component.css']
 })
 export class RoutinesComponent implements OnInit {
   private routines: Routine[] = [
@@ -35,9 +35,9 @@ export class RoutinesComponent implements OnInit {
     return routine.name;
   }
 
-  // TODO: move to own filter or directive
+  // TODO: move to own Pipe or Directive
   private mapToDisplayDateText(date: Date): string {
-    // TODO: Mock today's date, convert to UTC
+    // TODO: Make today's date mockable, convert to UTC
     const todaysDate = new Date();
     const isToday = areSameDate(todaysDate, date);
     const yesterdaysDate = addDays(new Date(), -1);
