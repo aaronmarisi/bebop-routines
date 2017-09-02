@@ -9,7 +9,7 @@
         <span class="mat-title">{{ routine.name }}</span>
       </div>
       <div md-line>
-        <span class="mat-subheading-2">{{ routine.lastCompletedDate }}</span>
+        <span class="mat-subheading-2">{{ routine.lastCompletedDate | todayAwareDate }}</span>
       </div>
     </a>
   </md-list-item>

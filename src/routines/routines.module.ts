@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MdToolbarModule, MdListModule, MdButtonModule, MdIconModule } from '@angular/material';
 
+import { TodayAwareDateModule } from '../pipes/today-aware-date.module';
 import { RoutinesComponent } from './routines.component';
 
 @NgModule({
@@ -13,7 +14,8 @@ import { RoutinesComponent } from './routines.component';
     MdToolbarModule,
     MdListModule,
     MdIconModule,
-    MdButtonModule
+    MdButtonModule,
+    TodayAwareDateModule
   ],
   exports: [
     RoutinesComponent

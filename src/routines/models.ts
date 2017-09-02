@@ -4,10 +4,5 @@ export interface Routine {
 }
 
 export interface RoutinesViewModel {
-  routines: RoutineViewModel[];
-}
-
-export interface RoutineViewModel {
-  name: string;
-  lastCompletedDate: string;
+  routines: Routine[];
 }

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { formatDate, areSameDate, addDays } from '../utility';
-import { Routine, RoutinesViewModel, RoutineViewModel } from './models';
+import { Routine, RoutinesViewModel } from './models';
 
 @Component({
   selector: 'app-routines',
@@ -31,36 +30,13 @@ export class RoutinesComponent implements OnInit {
     this.render();
   }
 
-  trackRoutine(routine: RoutineViewModel) {
+  trackRoutine(routine: Routine) {
     return routine.name;
   }
 
-  // TODO: move to own Pipe or Directive
-  private mapToDisplayDateText(date: Date): string {
-    // TODO: Make today's date mockable, convert to UTC
-    const todaysDate = new Date();
-    const isToday = areSameDate(todaysDate, date);
-    const yesterdaysDate = addDays(new Date(), -1);
-    const isYesterday = areSameDate(yesterdaysDate, date);
-
-    const dayText = isToday ? 'Today' : isYesterday ? 'Yesterday' : formatDate(date, 'dddd, MMMM, D, YYYY');
-    const lastCompletedDate = `${dayText}, ${formatDate(date, 'h:mm A')}`;
-
-    return lastCompletedDate;
-  }
-
   private render() {
-    const viewModel = {
-      routines: this.routines.map(routine => {
-        const routineViewModel: RoutineViewModel = {
-          lastCompletedDate: this.mapToDisplayDateText(routine.lastCompletedDate),
-          name: routine.name
-        };
-
-        return routineViewModel;
-      })
+    this.viewModel = {
+      routines: this.routines
     };
-
-    this.viewModel = viewModel;
   }
 }
