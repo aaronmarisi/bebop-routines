@@ -1,7 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { MdToolbarModule, MdListModule, MdButtonModule, MdIconModule, MdInputModule, MdFormFieldModule } from '@angular/material';
+import {
+  MdToolbarModule,
+  MdListModule,
+  MdButtonModule,
+  MdIconModule,
+  MdInputModule,
+  MdFormFieldModule,
+  MdCheckboxModule
+} from '@angular/material';
 
 import { TodayAwareDateModule } from '../pipes/today-aware-date.module';
 import { RoutinesComponent } from './routines.component';
@@ -20,6 +28,7 @@ export { RoutinesComponent, AddRoutineComponent };
     MdListModule,
     MdIconModule,
     MdButtonModule,
+    MdCheckboxModule,
     MdInputModule,
     RouterModule,
     TodayAwareDateModule

@@ -2,6 +2,17 @@
   padding: 16px;
 }
 
-.mat-form-field.full-width {
+.full-width {
   width: 100%;
+}
+
+.list-item-more-button {
+  position: absolute;
+  right: 16px;
+  top: 4px;
+}
+
+.header-secondary-button {
+  position: absolute;
+  right: 16px;
 }

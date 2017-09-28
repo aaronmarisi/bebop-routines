@@ -4,7 +4,7 @@ import { Routine, RoutinesViewModel } from './models';
 @Component({
   selector: 'app-routines',
   templateUrl: './routines.component.html',
-  styleUrls: ['./routines.component.css']
+  styleUrls: ['./routines.shared.css']
 })
 export class RoutinesComponent implements OnInit {
   private routines: Routine[] = [
