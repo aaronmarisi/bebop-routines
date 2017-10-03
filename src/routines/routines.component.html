@@ -1,22 +1,22 @@
-<md-toolbar color="primary">
-  <span>Routines</span>
-</md-toolbar>
+<app-animated-page #page>
+  <md-toolbar color="primary">
+    <span>Routines</span>
+  </md-toolbar>
 
-<md-nav-list>
-  <md-list-item *ngFor="let routine of viewModel.routines; index as i; trackBy: trackRoutine">
-    <a>
-      <div md-line>
-        <span class="mat-title">{{ routine.name }}</span>
-      </div>
-      <div md-line>
-        <span class="mat-subheading-2">{{ routine.lastCompletedDate | todayAwareDate }}</span>
-      </div>
-    </a>
-  </md-list-item>
-</md-nav-list>
+  <md-nav-list>
+    <md-list-item *ngFor="let routine of viewModel.routines; index as i; trackBy: trackRoutine">
+      <a>
+        <div md-line>
+          <span class="mat-title">{{ routine.name }}</span>
+        </div>
+        <div md-line>
+          <span class="mat-subheading-2">{{ routine.lastCompletedDate | todayAwareDate }}</span>
+        </div>
+      </a>
+    </md-list-item>
+  </md-nav-list>
 
-<a md-fab
-  class="main-action-button"
-  routerLink="/routine/add">
-  <md-icon>add</md-icon>
-</a>
+  <a md-fab class="main-action-button" (click)="onAddClick()">
+    <md-icon>add</md-icon>
+  </a>
+</app-animated-page>

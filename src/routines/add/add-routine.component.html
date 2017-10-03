@@ -1,35 +1,34 @@
-<md-toolbar color="primary">
-  <span>Add Routine</span>
-  <a routerLink="/routines" md-icon-button class="header-secondary-button">
-    <md-icon>clear</md-icon>
-  </a>
-</md-toolbar>
+<app-animated-page #page>
+  <md-toolbar color="primary">
+    <span>Add Routine</span>
+    <a md-icon-button class="header-secondary-button" (click)="onClearClick()">
+      <md-icon>clear</md-icon>
+    </a>
+  </md-toolbar>
 
-<form class="layout-padding">
-  <md-form-field class="full-width">
-    <input mdInput placeholder="Name">
-  </md-form-field>
-  <button md-raised-button class="full-width">Add Task</button>
-</form>
+  <form class="layout-padding">
+    <md-form-field class="full-width">
+      <input mdInput placeholder="Name">
+    </md-form-field>
+    <button md-raised-button class="full-width">Add Task</button>
+  </form>
 
-<md-list>
-  <md-list-item>
-    Do Something
-    <button md-icon-button class="list-item-more-button">
+  <md-list>
+    <md-list-item>
+      Do Something
+      <button md-icon-button class="list-item-more-button">
       <md-icon>more_vert</md-icon>
     </button>
-  </md-list-item>
-  <md-list-item>
-    Do Something Else
-    <button md-icon-button class="list-item-more-button">
+    </md-list-item>
+    <md-list-item>
+      Do Something Else
+      <button md-icon-button class="list-item-more-button">
         <md-icon class="pull-right">more_vert</md-icon>
       </button>
-  </md-list-item>
-</md-list>
+    </md-list-item>
+  </md-list>
 
-<a md-fab
-class="main-action-button"
-routerLink="/routine/add">
-<md-icon>done</md-icon>
-</a>
-
+  <a md-fab class="main-action-button" (click)="onSaveClick()">
+    <md-icon>done</md-icon>
+  </a>
+</app-animated-page>

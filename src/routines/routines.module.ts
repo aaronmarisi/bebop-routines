@@ -12,6 +12,7 @@ import {
 } from '@angular/material';
 
 import { TodayAwareDateModule } from '../pipes/today-aware-date.module';
+import { AnimatedPageModule } from '../shared/components/animated-page/animated-page.module';
 import { RoutinesComponent } from './routines.component';
 import { AddRoutineComponent } from './add/add-routine.component';
 
@@ -23,6 +24,7 @@ export { RoutinesComponent, AddRoutineComponent };
     AddRoutineComponent
   ],
   imports: [
+    AnimatedPageModule,
     CommonModule,
     MdToolbarModule,
     MdListModule,

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
+import { AnimatedPageComponent, PageAnimation } from '../shared/components/animated-page/animated-page.component';
 import { Routine, RoutinesViewModel } from './models';
 
 @Component({
@@ -26,12 +28,23 @@ export class RoutinesComponent implements OnInit {
     routines: []
   };
 
+  @ViewChild('page') page: AnimatedPageComponent;
+
+  constructor(private router: Router) { }
+
   ngOnInit() {
+    this.page.animate(PageAnimation.FadeIn);
     this.render();
   }
 
   trackRoutine(routine: Routine) {
     return routine.name;
+  }
+
+  onAddClick() {
+    this.page.animate(PageAnimation.FadeOut).then(() => {
+      this.router.navigateByUrl('routine/add');
+    });
   }
 
   private render() {

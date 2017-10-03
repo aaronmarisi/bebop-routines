@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
+import { AnimatedPageComponent, PageAnimation } from '../../shared/components/animated-page/animated-page.component';
 
 @Component({
   selector: 'app-add-routine',
@@ -7,7 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class AddRoutineComponent implements OnInit {
-  constructor() { }
+  @ViewChild('page') page: AnimatedPageComponent;
 
-  ngOnInit() { }
+  constructor(private router: Router) { }
+
+  ngOnInit() {
+    this.page.animate(PageAnimation.SlideInUp);
+  }
+
+  onClearClick() {
+    this.page.animate(PageAnimation.SlideOutDown).then(() => {
+      this.router.navigateByUrl('routines');
+    });
+  }
+
+  onSaveClick() {
+    this.page.animate(PageAnimation.SlideOutDown).then(() => {
+      this.router.navigateByUrl('routines');
+    });
+  }
 }

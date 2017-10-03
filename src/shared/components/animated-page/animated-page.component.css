@@ -1,0 +1,16 @@
+.app-page {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.fadeIn {
+  animation-duration: .7s;
+  /* vendor prefixes */
+}
+
+.fadeOut, .slideInUp, .slideOutDown {
+  animation-duration: .3s;
+}
