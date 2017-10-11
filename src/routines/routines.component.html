@@ -4,7 +4,7 @@
   </md-toolbar>
 
   <md-nav-list>
-    <md-list-item *ngFor="let routine of viewModel.routines; index as i; trackBy: trackRoutine">
+    <md-list-item *ngFor="let routine of store.routines; index as i; trackBy: trackRoutine">
       <a>
         <div md-line>
           <span class="mat-title">{{ routine.name }}</span>

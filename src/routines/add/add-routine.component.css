@@ -16,3 +16,15 @@
   position: absolute;
   right: 16px;
 }
+
+i.no-list-items {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+md-list-item.no-list-items {
+  background-color: #eeeeee;
+  margin-right: 16px;
+  margin-left: 16px;
+}

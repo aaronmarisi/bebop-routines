@@ -8,25 +8,31 @@
 
   <form class="layout-padding">
     <md-form-field class="full-width">
-      <input mdInput placeholder="Name">
+      <input mdInput name="name" placeholder="Name" [(ngModel)]="name">
     </md-form-field>
-    <button md-raised-button class="full-width">Add Task</button>
-  </form>
+    <button md-raised-button class="full-width" (click)="onAddTask($event)">Add Task</button>
 
-  <md-list>
-    <md-list-item>
-      Do Something
-      <button md-icon-button class="list-item-more-button">
-      <md-icon>more_vert</md-icon>
-    </button>
-    </md-list-item>
-    <md-list-item>
-      Do Something Else
-      <button md-icon-button class="list-item-more-button">
-        <md-icon class="pull-right">more_vert</md-icon>
-      </button>
-    </md-list-item>
-  </md-list>
+
+    <md-list *ngIf="!tasks.length && !addingTask">
+      <md-list-item class="no-list-items">
+        <i class="no-list-items">Nothing to see here</i>
+      </md-list-item>
+    </md-list>
+
+    <md-list *ngIf="tasks.length || addingTask">
+      <md-list-item *ngIf="addingTask">
+        <md-form-field class="full-width">
+          <input mdInput placeholder="Task Name" name="taskName" [(ngModel)]="taskName" (blur)="onAddTaskBlur(taskName)">
+        </md-form-field>
+      </md-list-item>
+      <md-list-item *ngFor="let task of tasks; index as i">
+        {{ task.name }}
+        <button md-icon-button class="list-item-more-button">
+          <md-icon class="pull-right">more_vert</md-icon>
+        </button>
+      </md-list-item>
+    </md-list>
+  </form>
 
   <a md-fab class="main-action-button" (click)="onSaveClick()">
     <md-icon>done</md-icon>

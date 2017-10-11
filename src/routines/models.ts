@@ -6,3 +6,7 @@ export interface Routine {
 export interface RoutinesViewModel {
   routines: Routine[];
 }
+
+export interface Task {
+  name: string;
+}
